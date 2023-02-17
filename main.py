@@ -1,69 +1,172 @@
-#Module 4
-#Review Questions for Chapter 4
-#1. What is a variable?
-#It is a symbolic name that is a reference or pointer to an object. Once an object is assigned to a variable, you can
-# refer to the object by that name.
+# This is a sample Python script.
+#Module 5
+
+#Review Questions for Chapter 5
+#1) What is the difference between a tuple and a list?
+#The primary difference between tuples and lists is that tuples are immutable as opposed to lists which are
+#mutable. Therefore, it is possible to change a list but not a tuple. The contents of a tuple cannot change once
+# they have been created in Python due to the immutability of tuples.
+#Assignment changes variables, but mutation changes objects. Most Python objects can be changed after they've been
+# created. Lists, sets, and dictionaries can all be changed, whereas tuples, numbers, and strings cannot.
+
+
+
+
+
+
+#2) How is a list different than a dictionary?
+#A list is an ordered sequence of objects, whereas dictionaries are unordered sets. However, the main difference
+# is that items in dictionaries are accessed via keys and not via their position.
+#Dictionary is a key and does not have an order but you cannot use same words twice.
+
+
+
+
+
+
+#3) Create a program that prints a list of words in random order. The program should print all the words and
+# not repeat any.
+# See PyCharm help at https://www.jetbrains.com/help/pycharm/
+
+import random
+list = ["one", "two", "three", "four"]
+reap = []
+while len(list) !=len(reap):
+    #pick one word at random
+    word = random.choice(list)
+    if word not in reap:
+        print(word)
+        reap.append(word)
+        #append is a modifier
+
+
+
+
+
+# 4) Write a Character Creator program for a role-playing game. The player should be given a pool of 30 points to
+# spend on four attributes: Strength, Health, Wisdom, and Dexterity. The player should be able to spend points
+# from the pool on any attribute and should also be able to take points from an attribute and put them back into
+# the pool.
 #
-#2 What is a constant?
-#the term constant refers to names representing values that don't change during a program's execution. A constant is a
-# type of variable that holds values, which cannot be changed. In reality, we rarely use constants in Python. Constants
-# are usually declared and assigned on a different module/file. Then, they are imported to the main file. Variables are
-# mutable, i.e., their values can be changed and updated. Constants are immutable, i.e. their values cannot be changed
-# or updated. Literals are both mutable or immutable depending on the type of literal used.
+#totalpoints=30
+#characters={}
+#choice= None
+#while choice !="0":
+#    print(
+#        """
+#        1. Create a new characters
+#        2. Allocate Points
+#        3. Deallocate Points
+#        0. Exit
+#        """
+#    )
+#choice = str(input("Enter your choice: "))
+##if choice == "1":
+#    characterName = input("Enter the character name: ")
+#    if characterName not in characters:
+#        characters[characterName]={"Strength":0, "Health":0, "Wisdom":0, "Dexterity":0}
+#    else:
+#        print("Character already exists!")
+#elif choice == "2":
+#    print("Characters are: ")
+#    for character in characters:
+#        print(character)
+#        characterName = input("What character you want to allocate points to? ")
+#        if characterName not in characters:
+#            print("Character doesn't exist")
+#        else:
+#            attribute = input("Allocate the points to which one: Strength, Health, Wisdom or Dexterity? ")
+#            if attribute not in characters [characterName]:
+#                print("Invalid attribute!!")
+#            else:
+#                remainingPoints = totalpoints - sum([characterName[k] for k in characters [characterName]])
+#                points = int(input("Enter the number of points to allocate to %s:"%attribute))
+#                if points > remainingPoints:
+#                    print("Given points exceed the remaining points!!")
+#                else:
+##                    characters[characterName][attribute] += points
+#                   print(characters[characterName])
+#elif choice == "3":
+#            print("Characters are:")
+#            for character in characters:
+#                print(character)
+#                characterName = input("What character do you want to deallocate points? ")
+#                if characterName not in characters:
+#                    print("Character doesn't exist")
+#                else:
+#                    attribute = input("Deallocate points from Strength, Health, Wisdom, or Dexterity)?")
+#                    if attribute not in characters[characterName]:
+#                        print("Invalid attribute!!")
+#                    else:
+#                        allocatedpoints = characters[characterName][attribute]
+#                        points = int(input('Enter the number of points to deallocate to %s:'%attribute))
+#                        if points > allocatedpoints:
+#                            print("points can't be less than the allocated points!")
+#                        #else:
+#                            #characters[characterName][attribute] -= points
+#                            #print(characters[characterName])
+#elif choice == "0":
+    #print("goodbyeeee")
+    #else:
+#    print("not correct!!")
+
+
+
+
+
+
+
+# 5) Write a Who’s Your Daddy? program that lets the user enter the name of a male and produces the name of
+# his father. (You can use celebrities, fictional characters, or even historical figures for fun.) Allow the user
+# to add, replace, and delete son-father pairs.
+
+#Pick = None
+#Daddy = {}
+
+#loop
+#while Pick != "0":
+    #print choices
+#    print(
+#        """
+#        1. Enter the name of a male.
+#        2.ADD PAIR
+#       #3. REPLACE PAIR
+#      4. Delete a father-son pair.
+ #       """
+#    )
+#ask user chioces
+#    Pick = input("What do you want to do? ")
+#    if Pick== "1":
+#        #name of son
+#        son = input("Enter Son's name: ")
+#        #check to see if pair exists
+#        if son in Daddy:
+#            print("Father of %s is %s" % (son, Daddy[son]))
+#        else:
+#            print("There is no info on this person!!")
+#    elif Pick== "2":
+#        son = input("Enter Son's name: ")
+#        if son not in Daddy:
+#            father = input("Enter name of father: ")
+#            Daddy[son] = father
+#    else:
+#        print("Pair already exists!!")
+#    elif Pick == "3":
+#            son = input("Enter Son's name: ")
+#        in son not in Daddy:
+#            son = input("Enter Son's name: ")
 #
-#3. Can a variable be changed once assigned?
-#Some values in python can be modified, and some cannot. This does not ever mean that we can't change the value of a
-# variable – but if a variable contains a value of an immutable type, we can only assign it a new value. We cannot alter
-# the existing value in any way.#
-#
-#4. Write a program that counts for the user. Let the user enter the starting number, the ending number, and the amount
-# by which to count.
-#start = int(input(“Enter a starting a number: “))
-#end = int(input(“Enter an ending number: “))
-#amount = int(input (“Enter an amount by which to count in spaces: “))
-#For i in in range (start,end+=1, amount):
-#Print(i)
+ #   if son in Daddy:
+  #  father = input("Replace father's name: ")
+   #         Daddy[son] = father
+    #    else:
+     #       print("Paid does not exist")
+#    elif Pick== "4":
+ #           son = input("Enter Son's name: ")
+  #      if son in Daddy:
+   #         del Daddy[son]
+    #    else:
+     #       print("Pair does not exist!")
 
-
-#5. Create a program that gets a message from the user and then prints it out backwards.
-
-Message = input(“Enter a message: ”)
-Print(“Printing it out backwards: )
-Print(message[::-1])
-# this is how words get typed backwards on coding, like a secret code
-
-
-
-#6. Create a game where the computer picks a random word and the player has to guess that word. The computer tells the
-# player how many letters are in the word. Then the player gets five chances to ask if a letter is in the word. The
-# computer can only respond with “yes” or “no”. Then, the player must guess the word.
-
-# The computer picks a random word
-# The computer tells player how many letter. five chances, player has to guess the original word
-
-#import random
-# create a sequence of words to choose from
-#WORDS = ("sun", "is", "up", "little", "after", "twelve")
-# pick one word randomly from the sequence
-
-#word = random.choice(WORDS)
-#print ("How many letters are in the word? ", len(word))
-#guess = 0
-#typed = " "
-# create five chances to guess letter of the word
-#while guess <5:
-#    letter = input ("Guess a letter in the word: ")
-#    if letter in word:
-#        print("yes")
-#    elif letter not in word:
-#     print ("nope")
-#    guess +=1
-#print("You must guess the word now: ")
-# player types word
-#typed = input("The word: ")
-#Guessed correctly
-#if typed.lower == word:
-#    print("That's it!  You guessed it!")
-#Guessed incorrectly
-#elif typed.lower != word and word != "":
-#    print("Sorry, that's not it.")
+    #else:
+     #   print("Wrong answer")
